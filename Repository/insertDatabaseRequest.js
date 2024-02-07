@@ -2,7 +2,7 @@ const client = require('../connection')
 exports.insertUserRequest = (parameters) => {
   parameters[2] = parameters[2].map((val) => {
     if (isNaN(val)) {
-      return val.replaceAll("'", `"`);
+      return val.replaceAll("'", "`");
     } else return val;
   });
   var query = `INSERT INTO ${parameters[0]}
